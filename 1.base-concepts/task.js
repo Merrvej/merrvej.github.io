@@ -11,29 +11,24 @@ function solveEquation(a, b, c) {
       arr.push((-b + Math.sqrt(d) )/(2*a));
       arr.push((-b - Math.sqrt(d) )/(2*a));
     }
+    return arr;
   }
-  return arr;
+
 
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let interest = percent / 100;
   let P = interest / 12;
   let S = amount - contribution;
-  let totalMortgage = [];
+  let totalMortgage;
   
-  for (let i = 0; i <= countMonths; i++) {
+  for (let i = 1; i <= countMonths; i++) {
     let n = countMonths - i;
-    let payment = S * (P + (P / (((1 + P)**n) - 1)))
-    totalMortgage.push(payment);
+    let x = Math.pow((1 + P), n);
+    let y = +x.toFixed(2) - 1;
+    let monthlyPayment = S * (P + (P / y))
+    totalMortgage += monthlyPayment;
   }
-
-  let totalMortgageSum = 0;
-
-  for (let i = 0; i < totalMortgage.length; i++) {
-    totalMortgageSum += totalMortgage[i];
-  }
-
-  let totalMortgageSumRounded = totalMortgageSum.toFixed(2);
+  return totalMortgage;
 }
-  return totalMortgageSumRounded;
-  console.log(parseFloat(totalMortgageSumRounded))
+  console.log(+totalMortgage.toFixed(2));
