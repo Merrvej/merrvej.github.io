@@ -24,6 +24,8 @@ function solveEquation(a, b, c) {
     let y = x - 1;
     let monthlyPayment = S * (P + (P / y));
     let totalMortgage = monthlyPayment * countMonths;
-    console.log(+totalMortgage.toFixed(2));
+    let totalMortgageRounded = +totalMortgage.toFixed(2);
+    console.log(totalMortgageRounded);
+    return totalMortgageRounded;
   }
   
