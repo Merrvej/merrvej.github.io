@@ -20,18 +20,10 @@ function solveEquation(a, b, c) {
     let interest = percent / 100;
     let P = interest / 12;
     let S = amount - contribution;
-    let totalMortgage;
-    
-    for (let i = 1; i <= countMonths; i++) {
-      let n = countMonths - i;
-      let x = Math.pow((1 + P), n);
-      let y = x - 1;
-      let monthlyPayment = S * (P + (P / y));
-      totalMortgage += monthlyPayment;
-      return totalMortgage;
-    }
+    let x = Math.pow((1 + P), countMonths);
+    let y = x - 1;
+    let monthlyPayment = S * (P + (P / y));
+    let totalMortgage = monthlyPayment * countMonths;
+    console.log(+totalMortgage.toFixed(2));
   }
   
-  calculateTotalMortgage (10, 0, 50000, 12);
-  
-    console.log(+totalMortgage.toFixed(2));
