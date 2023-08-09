@@ -115,7 +115,7 @@ function makeWork (arrOfArr, func) {
 
   for (i = 0; i < arrOfArr.lehgth; i++) {
 
-    func(arrOfArr[i])
+    func(arrOfArr[i]);
 
     if (func(arrOfArr[i]) > maxWorkerResult) {
       maxWorkerResult = func(arrOfArr[i]);
@@ -124,3 +124,11 @@ function makeWork (arrOfArr, func) {
 
   return maxWorkerResult;
 }
+
+makeWork (arrOfArr, summElementsWorker)()
+
+makeWork (arrOfArr, differenceMaxMinWorker)()
+
+makeWork (arrOfArr, differenceEvenOddWorker)()
+
+makeWork (arrOfArr, averageEvenElementsWorker)()
