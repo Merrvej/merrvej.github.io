@@ -113,22 +113,22 @@ function makeWork (arrOfArr, func) {
 
   let maxWorkerResult = arrOfArr[0][0];
 
-  for (i = 0; i < arrOfArr.lehgth; i++) {
+  for (i = 0; i < arrOfArr.length; i++) {
 
-    func(...arrOfArr[i]);
+    const result = func(...arrOfArr[i]);
 
-    if (func(...arrOfArr[i]) > maxWorkerResult) {
-      maxWorkerResult = func(arrOfArr[i]);
+    if (result > maxWorkerResult) {
+      maxWorkerResult = result;
     };
   };
 
   return maxWorkerResult;
 }
 
-makeWork (arrOfArr, summElementsWorker)()
+// makeWork (arrOfArr, summElementsWorker)()
 
-makeWork (arrOfArr, differenceMaxMinWorker)()
+// makeWork (arrOfArr, differenceMaxMinWorker)()
 
-makeWork (arrOfArr, differenceEvenOddWorker)()
+// makeWork (arrOfArr, differenceEvenOddWorker)()
 
-makeWork (arrOfArr, averageEvenElementsWorker)()
+// makeWork (arrOfArr, averageEvenElementsWorker)()
